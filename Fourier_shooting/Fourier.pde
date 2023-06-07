@@ -13,13 +13,13 @@ class Fourier extends Barrage {
       ArrayList<BulletAction> list = new ArrayList<BulletAction>();
       BulletAction act0 = new BulletAction(GO, 2.5f);
 
-      BulletAction act1 = new BulletAction(MOVE_DC, 0.3);
+      BulletAction act1 = new BulletAction(MOVE_DC, 0.5);
       act1.destPos_x = t;
       act1.destPos_y = f1(t) + f2(t) + height / 2;
 
       BulletAction act2 = new BulletAction(GO, 2.5f);
 
-      BulletAction act3 = new BulletAction(MOVE_DC,0.3);
+      BulletAction act3 = new BulletAction(MOVE_DC,0.5);
       act3.destPos_x = t;
       act3.destPos_y = f1(t) + height / 2;
       
@@ -38,7 +38,7 @@ class Fourier extends Barrage {
       Bullet lower;
       ArrayList<BulletAction> list2 = new ArrayList<BulletAction>();
       
-      act0 = new BulletAction(MOVE_DC,0.3);
+      act0 = new BulletAction(MOVE_DC,0.5);
       act0.destPos_x = t;
       act0.destPos_y = f3(t) + (float)height * 5 / 6;
       
@@ -54,7 +54,7 @@ class Fourier extends Barrage {
       Bullet upper;
       ArrayList<BulletAction> list3 = new ArrayList<BulletAction>();
       
-      act0 = new BulletAction(MOVE_DC,0.3);
+      act0 = new BulletAction(MOVE_DC,0.5);
       act0.destPos_x = t;
       act0.destPos_y = f2(t) + (float)height / 6;
       
@@ -63,7 +63,7 @@ class Fourier extends Barrage {
       list3.add(act0);
       list3.add(act1);
 
-      upper = new Bullet(t,f1(t) + f2(t) + (float)height / 2,0,0,255,10,i * (float)1 / frameRate + 5.3f,list3);
+      upper = new Bullet(t,f1(t) + f2(t) + (float)height / 2,0,0,255,10,i * (float)1 / frameRate + 5.5f,list3);
       
       bulletManager.addBullet(upper);
     }
