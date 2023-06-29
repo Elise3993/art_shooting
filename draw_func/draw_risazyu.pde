@@ -34,7 +34,7 @@ class Draw_risazyuPart extends Barrage{
      
      
      list.add(act1);
-     if(random(0,1) < 0.0){
+     if(random(0,1) < 1.3){
        list.add(act2);
      }
      
