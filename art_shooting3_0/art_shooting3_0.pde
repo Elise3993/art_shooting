@@ -35,3 +35,8 @@ void mouseDraw() {
   fill(0);
   ellipse(mouseX, mouseY, mouseR, mouseR);
 }
+
+void keyPressed(){
+  if(key == 'a') bulletManager.stopAllBullets();
+  if(key == 's') bulletManager.fallAllBullets();
+}

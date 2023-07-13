@@ -47,5 +47,35 @@ class BulletManager{
     return res;
   }
   
+  // 全ての弾の行動予定をリセットする
+  void resetAllBullets(float offset){
+    for(int i = 0;i < bullets.size();i++){
+      bullets.get(i).moveReset(offset);
+    }
+  }
+  
+  // 全ての弾の動作をその場で停止させる
+  void stopAllBullets(){
+    resetAllBullets(0);
+    for(int i  = 0;i < bullets.size();i++){
+      bullets.get(i).actionList.clear();
+      var stop = new BulletAction(STOP,1000);
+      bullets.get(i).addAction(stop);
+    }
+  }
+  
+  // 全ての弾を垂直落下させる
+  void fallAllBullets(){
+     resetAllBullets(0.1);
+     for(int i = 0;i < bullets.size();i++){
+       bullets.get(i).actionList.clear();
+       var fall = new BulletAction(GO,100);
+       fall.speed0 = 0;
+       fall.gravity0 = 980;
+       fall.gravity_angle0 = 90;
+       
+       bullets.get(i).addAction(fall);
+     }
+  }
   
 }
